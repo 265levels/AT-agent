@@ -43,6 +43,11 @@
           <div class="underline"></div>
         </div>
 
+        <!-- Error message (hidden by default) -->
+        <p id="phone-error" class="error-message" style="display: none;">
+          Please enter your phone number
+        </p>
+
         <button class="btn-primary" type="button" onclick="goToPasswordScreen()">
           <span class="lock-icon">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
@@ -67,15 +72,21 @@
 
 
 <script>
+  const phoneInput = document.getElementById('phone-input');
+  const phoneError = document.getElementById('phone-error');
+
   function goToPasswordScreen() {
-    const phone = document.getElementById('phone-input').value.trim();
+    const phone = phoneInput.value.trim();
 
     // Require a phone number before continuing
     if (!phone) {
-      alert('Please enter your phone number');
-      document.getElementById('phone-input').focus();
+      phoneError.style.display = 'block';
+      phoneInput.focus();
       return;
     }
+
+    // Hide error if previously shown
+    phoneError.style.display = 'none';
 
     // Save phone number (for your database / next steps)
     sessionStorage.setItem('phoneNumber', phone);
@@ -86,6 +97,13 @@
     // Go to the password screen
     window.location.href = 'screen2-password.html';
   }
+
+  // Hide the error as soon as the user starts typing
+  phoneInput.addEventListener('input', function () {
+    if (phoneInput.value.trim()) {
+      phoneError.style.display = 'none';
+    }
+  });
 </script>
 </body>
 </html>
