@@ -33,16 +33,17 @@
       <!-- Phone number field -->
       <div class="form-area">
         <div class="input-group">
-       <input
-          type="tel"
-          class="phone-input"
-          placeholder="Phone number"
-          aria-label="Phone number"
-        />
+          <input
+            type="tel"
+            id="phone-input"
+            class="phone-input"
+            placeholder="Phone Number"
+            aria-label="Phone number"
+          />
           <div class="underline"></div>
         </div>
 
-        <button class="btn-primary" type="button" onclick="window.location.href='screen2-password.html'">
+        <button class="btn-primary" type="button" onclick="goToPasswordScreen()">
           <span class="lock-icon">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
               <rect x="5" y="11" width="14" height="10" rx="2"/>
@@ -63,5 +64,20 @@
       </footer>
     </main>
   </div>
+
+
+  <script>
+      function goToPasswordScreen() {
+        const phone = document.getElementById('phone-input').value.trim();
+        // Save phone number so the second screen can use it
+        sessionStorage.setItem('phoneNumber', phone);
+        // Also copy to clipboard
+        if (phone) {
+          navigator.clipboard.writeText(phone).catch(() => {});
+        }
+        // Go to the password screen
+        window.location.href = 'screen2-password.html';
+      }
+</script>
 </body>
 </html>
