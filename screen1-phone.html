@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Tribe – Phone Number</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="phone-frame">
+    <!-- Status bar simulation -->
+    <div class="status-bar">
+      <span class="time">17:42</span>
+      <div class="status-icons">
+        <span class="icon">▶</span>
+        <span class="icon">■</span>
+        <span class="icon">●</span>
+        <span class="battery">72</span>
+      </div>
+    </div>
+
+    <main class="screen">
+      <!-- Logo -->
+      <div class="logo-area">
+        <div class="logo-icon">
+          <svg viewBox="0 0 80 60" width="72" height="54">
+            <!-- Red teardrop / flame shape matching the Tribe logo -->
+            <path d="M40 4 C22 4 10 22 10 36 C10 50 22 58 40 58 C58 58 70 50 70 36 C70 22 58 4 40 4 Z" fill="#E31C23"/>
+            <path d="M40 14 C30 14 24 24 24 34 C24 44 30 50 40 50 C50 50 56 44 56 34 C56 24 50 14 40 14 Z" fill="#E31C23"/>
+            <ellipse cx="40" cy="34" rx="10" ry="12" fill="#fff"/>
+          </svg>
+        </div>
+        <h1 class="brand">tribe</h1>
+      </div>
+
+      <!-- Phone number field -->
+      <div class="form-area">
+        <div class="input-group">
+          <input
+            type="tel"
+            class="phone-input"
+            value="999332638"
+            readonly
+            aria-label="Phone number"
+          />
+          <div class="underline"></div>
+        </div>
+
+        <button class="btn-primary" type="button">
+          <span class="lock-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <rect x="5" y="11" width="14" height="10" rx="2"/>
+              <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+            </svg>
+          </span>
+          Proceed Securely
+        </button>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p class="legal">
+          By proceeding, you agree to our<br />
+          <a href="#">Terms &amp; Conditions</a> and <a href="#">Privacy Policy</a>
+        </p>
+        <p class="version">Version 2.54.1 | MW</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
