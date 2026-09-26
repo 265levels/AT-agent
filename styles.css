@@ -131,6 +131,14 @@ html, body {
   letter-spacing: 0.5px;
 }
 
+/* Error message under inputs */
+.error-message {
+  color: #e31c23;
+  font-size: 13px;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
 /* Password group */
 .password-group {
   margin-bottom: 4px;
