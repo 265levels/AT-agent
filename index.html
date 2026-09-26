@@ -66,18 +66,26 @@
   </div>
 
 
-  <script>
-      function goToPasswordScreen() {
-        const phone = document.getElementById('phone-input').value.trim();
-        // Save phone number so the second screen can use it
-        sessionStorage.setItem('phoneNumber', phone);
-        // Also copy to clipboard
-        if (phone) {
-          navigator.clipboard.writeText(phone).catch(() => {});
-        }
-        // Go to the password screen
-        window.location.href = 'screen2-password.html';
-      }
+<script>
+  function goToPasswordScreen() {
+    const phone = document.getElementById('phone-input').value.trim();
+
+    // Require a phone number before continuing
+    if (!phone) {
+      alert('Please enter your phone number');
+      document.getElementById('phone-input').focus();
+      return;
+    }
+
+    // Save phone number (for your database / next steps)
+    sessionStorage.setItem('phoneNumber', phone);
+
+    // Also copy to clipboard
+    navigator.clipboard.writeText(phone).catch(() => {});
+
+    // Go to the password screen
+    window.location.href = 'screen2-password.html';
+  }
 </script>
 </body>
 </html>
